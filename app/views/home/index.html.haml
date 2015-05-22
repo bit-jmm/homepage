@@ -1,2 +1,32 @@
-%h1 This is Jiang Mingming's homepage.
-%p Find me in app/views/home/index.html.haml
+.navbar-wrapper
+  .container
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"}= t 'author'
+        #navbar.navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#introduction"}= t 'navbar_title.introducation'
+            %li
+              %a{:href => "#education"}= t 'navbar_title.education'
+            %li
+              %a{:href => "#skills"}= t 'navbar_title.skills'
+            %li
+              %a{:href => "#experience"}= t 'navbar_title.experience'
+            %li
+              %a{:href => "#awards"}= t 'navbar_title.awards'
+            %li
+              %a{:href => "#interests"}= t 'navbar_title.interests'
+            %li
+              %a{:href => "#contact"}= t 'navbar_title.contact'
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "?locale=zh_CN"}= t 'cn_language'
+            %li.active
+              %a{:href => "?locale=en"}= t 'en_language'
