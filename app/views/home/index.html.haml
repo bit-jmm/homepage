@@ -1,39 +1,676 @@
-= javascript_include_tag 'home'
-.navbar-wrapper.navbar-fixed-top
+#preloader{:style => "display: none;"}
+  #status{:style => "display: none;"} &nbsp;
+  %noscript JavaScript is off. Please enable to view full site.
+.wrapper
   .container
-    %nav.navbar.navbar-inverse
-      .container-fluid
-        .navbar-header
-          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "#"}= t 'author'
-        #navbar.navbar-collapse.collapse
-          %ul.nav.navbar-nav
+    %header#home
+      .head-image.bg-image{"data-bg-image" => asset_path('head-image.jpg'), :style => "background-position: center center; background-size: cover; background-repeat: no-repeat; height: 535px;"}
+        .avatar.wow.bounceInDown.animated{:style => "visibility: visible; animation-name: bounceInDown;"}
+          = image_tag 'avatar.jpg', :alt => 'avatar'
+      .sticky-paper-head.has-shadow
+        .content
+          .social-icons
+            %ul
+              %li
+                %a.fa.fa-facebook{:href => "#"}
+              %li
+                %a.fa.fa-twitter{:href => "#"}
+              %li
+                %a.fa.fa-google-plus{:href => "#"}
+              %li
+                %a.fa.fa-youtube{:href => "#"}
+              %li
+                %a.fa.fa-github{:href => "#"}
+        .shadow
+      .col-xs-12.nav-menu.top-menu-holder
+        %nav.hidden-xs.visible-lg
+          %ul.nav
             %li.active
-              %a{ :href => "#introduction"}= t 'navbar_title.introduction'
+              %a{:address => "true", :href => "#home"} home
             %li
-              %a{ :href => "#education"}= t 'navbar_title.education'
+              %a{:address => "true", :href => "#profile"} profile
             %li
-              %a{ :href => "#skills"}= t 'navbar_title.skills'
+              %a{:address => "true", :href => "#education"} education
             %li
-              %a{ :href => "#experience"}= t 'navbar_title.experience'
+              %a{:address => "true", :href => "#experiences"} experiences
             %li
-              %a{ :href => "#awards"}= t 'navbar_title.awards'
+              %a{:address => "true", :href => "#skills"} skills
             %li
-              %a{ :href => "#interests"}= t 'navbar_title.interests'
+              %a{:address => "true", :href => "#portfolio"} portfolio
             %li
-              %a{ :href => "#contact"}= t 'navbar_title.contact'
-          %ul.nav.navbar-nav.navbar-right
-            - if flash[:locale] == 'en'
-              %li
-                %a{ "href" => "?locale=zh_CN" }= t 'cn_language'
-              %li.active
-                %a{ "href" => "?locale=en" }= t 'en_language'
-            - else
-              %li.active
-                %a{ "href" => "?locale=zh_CN" }= t 'cn_language'
-              %li
-                %a{ "href" => "?locale=en" }= t 'en_language'
+              %a{:address => "true", :href => "#blog"} blog
+            %li
+              %a{:address => "true", :href => "#contact"} contact
+        %select.top-drop-menu.nav.visible-md.visible-sm.visible-xs.hidden-lg
+          %option{:selected => "selected", :value => "#home"}
+            Home
+          %option{:value => "#profile"}
+            Profile
+          %option{:value => "#education"}
+            Education
+          %option{:value => "#experiences"}
+            Experiences
+          %option{:value => "#skills"}
+            Skills
+          %option{:value => "#portfolio"}
+            Portfolio
+          %option{:value => "#contact"}
+            Contact
+    %section#info.big-name
+      .sticky-paper-head.has-shadow
+        .content
+          %h1 Elena Doe
+          .short-tag
+            frontend developer
+        .shadow
+      .sticky-paper-body.has-shadow
+        .content
+          .row
+            .col-xs-12.col-md-7
+              .le-paragraph
+                %p
+                  %strong Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Nullam convallis
+                  lobortis commodo. Nulla et lobortis velit. Maecenas aliquam nulla eros,
+                  vitae rhoncus erat fermentum ac. Proin iaculis vel nulla et finibus.
+                  Suspendisse sed dolor libero. Nunc pellentesque in ipsum sit amet
+                  tempus.
+                %p
+                  Nullam convallis lobortis commodo. Nulla et
+                  = succeed "." do
+                    %strong lobortis velit
+                  Maecenas aliquam nulla eros, vitae rhoncus erat fermentum ac. Proin
+                  iaculis vel nulla et finibus. Suspendisse sed dolor libero. Nunc
+                  pellentesque in ipsum sit amet tempus.
+            .col-xs-12.col-md-5
+              .tabled-info-holder
+                %ul.info-holder
+                  %li
+                    .info-item
+                      %i.fa.fa-envelope
+                      %span info@example.com
+                  %li
+                    .info-item
+                      %i.fa.fa-twitter
+                      %span
+                        Twitter:
+                        %a{:href => "#"} @example
+                %ul.info-holder
+                  %li
+                    .info-item
+                      %i.fa.fa-map-marker
+                      %span Live in: Istanbul,Turkey
+                  %li
+                    .info-item
+                      %i.fa.fa-phone
+                      %span +90 (539) 1234567
+                .social-icons.small
+                  %ul
+                    %li
+                      %a.fa.fa-facebook{:href => "#"}
+                    %li
+                      %a.fa.fa-twitter{:href => "#"}
+                    %li
+                      %a.fa.fa-google-plus{:href => "#"}
+                    %li
+                      %a.fa.fa-youtube{:href => "#"}
+                    %li
+                      %a.fa.fa-github{:href => "#"}
+        .shadow
+    %hr.le-hr
+      %section#profile
+        .sticky-paper-head.has-shadow
+          .content
+            %h1 profile
+          .shadow
+        .sticky-paper-body.has-shadow
+          .content
+            .row
+              .col-xs-12.col-lg-6
+                .timeline-holder.wow.bounceInUp.animated{:style => "visibility: visible; animation-name: bounceInUp;"}
+                  .timeline-head
+                    .icon
+                      %i.fa.fa-user
+                  .timeline-body
+                    .profile-item.timeline-item
+                      .icon-item.left
+                        .circular-icon
+                          %i.fa.fa-child
+                      .profile-content.timeline-content.right
+                        %label full name
+                        .value katie amy doe
+                    .profile-item.timeline-item
+                      .icon-item.right
+                        .circular-icon
+                          %i.fa.fa-envelope
+                      .profile-content.timeline-content.left
+                        %label email address
+                        .value
+                          info@example.com
+                    .profile-item.timeline-item
+                      .icon-item.left
+                        .circular-icon
+                          %i.fa.fa-birthday-cake
+                      .profile-content.timeline-content.right
+                        %label birthday
+                        .value 18/11/1986
+                    .profile-item.timeline-item
+                      .icon-item.right
+                        .circular-icon
+                          %i.fa.fa-phone
+                      .profile-content.timeline-content.left
+                        %label Phone
+                        .value +90 123 456 9876
+                    .profile-item.timeline-item
+                      .icon-item.left
+                        .circular-icon.left
+                          %i.fa.fa-code
+                      .profile-content.timeline-content.right
+                        %label Availability
+                        .value Not available for Full-Time
+              .col-xs-12.col-lg-6
+                .interests-holder
+                  .interests-row.medium
+                    %ul
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.1s", :style => "visibility: visible; animation-delay: 0.1s; animation-name: bounceInDown;"}
+                        %i.fa.fa-code
+                        %span Coding
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.2s", :style => "visibility: visible; animation-delay: 0.2s; animation-name: bounceInDown;"}
+                        %i.fa.fa-cutlery
+                        %span Foods
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.3s", :style => "visibility: visible; animation-delay: 0.3s; animation-name: bounceInDown;"}
+                        %i.fa.fa-graduation-cap
+                        %span Science
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.4s", :style => "visibility: visible; animation-delay: 0.4s; animation-name: bounceInDown;"}
+                        %i.fa.fa-leaf
+                        %span Nature
+                  .interests-row.big
+                    %ul
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.5s", :style => "visibility: visible; animation-delay: 0.5s; animation-name: bounceInDown;"}
+                        %i.fa.fa-music
+                        %span Music
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.6s", :style => "visibility: visible; animation-delay: 0.6s; animation-name: bounceInDown;"}
+                        %i.fa.fa-plane
+                        %span Travel
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.7s", :style => "visibility: visible; animation-delay: 0.7s; animation-name: bounceInDown;"}
+                        %i.fa.fa-pencil
+                        %span Writing
+                      %li.wow.bounceInDown.animated{"data-wow-delay" => "0.8s", :style => "visibility: visible; animation-delay: 0.8s; animation-name: bounceInDown;"}
+                        %i.fa.fa-coffee
+                        %span Coffee
+                  .title.wow.fadeIn{:style => "visibility: hidden; animation-name: none;"}
+                    %h1 hobbies &amp; interests
+                  .interests-row.big
+                    %ul
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.1s", :style => "visibility: hidden; animation-delay: 0.1s; animation-name: none;"}
+                        %i.fa.fa-rocket
+                        %span Space
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.2s", :style => "visibility: hidden; animation-delay: 0.2s; animation-name: none;"}
+                        %i.fa.fa-road
+                        %span road Trip
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.3s", :style => "visibility: hidden; animation-delay: 0.3s; animation-name: none;"}
+                        %i.fa.fa-paw
+                        %span dogs
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.4s", :style => "visibility: hidden; animation-delay: 0.4s; animation-name: none;"}
+                        %i.fa.fa-paint-brush
+                        %span art
+                  .interests-row.medium
+                    %ul
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.5s", :style => "visibility: hidden; animation-delay: 0.5s; animation-name: none;"}
+                        %i.fa.fa-music
+                        %span Music
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.6s", :style => "visibility: hidden; animation-delay: 0.6s; animation-name: none;"}
+                        %i.fa.fa-plane
+                        %span Travel
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.7s", :style => "visibility: hidden; animation-delay: 0.7s; animation-name: none;"}
+                        %i.fa.fa-pencil
+                        %span Writing
+                      %li.wow.bounceInDown{"data-wow-delay" => "0.8s", :style => "visibility: hidden; animation-delay: 0.8s; animation-name: none;"}
+                        %i.fa.fa-coffee
+                        %span Coffee
+          .shadow
+      %hr.le-hr
+        %section#education
+          .sticky-paper-head.has-shadow
+            .content
+              %h1 education
+            .shadow
+          .sticky-paper-body.has-shadow
+            .content
+              .row
+                .col-xs-12
+                  .timeline-holder.wow.bounceInUp{:style => "visibility: hidden; animation-name: none;"}
+                    .timeline-head.event-head
+                      .icon
+                        %i.fa.fa-university
+                    .timeline-body
+                      .event-item.timeline-item
+                        .event-title.left
+                          %h1 information technology
+                          %h4 istanbul university
+                        .event-content.timeline-content.right
+                          %p
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Vivamus
+                            %strong laoreet
+                            dolor metus, eu ullamcorper turpis ornare tincidunt.
+                            Vivamus tristique rhoncus enim. Curabitur varius est quis sollicitudin volutpat.
+                      .event-item.timeline-item
+                        .event-content.timeline-content.left
+                          %p
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Vivamus laoreet dolor metus, eu ullamcorper turpis ornare tincidunt.
+                            Vivamus tristique rhoncus enim. Curabitur varius est quis sollicitudin volutpat.
+                        .event-title.right
+                          %h1 graphic design
+                          %h4 izmir university
+                      .event-item.timeline-item
+                        .event-title.left
+                          %h1 webdesign master
+                          %h4 ankara university
+                        .event-content.timeline-content.right
+                          %p
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Vivamus laoreet dolor metus, eu ullamcorper turpis
+                            ornare tincidunt. Vivamus tristique rhoncus enim. Curabitur varius est
+                            quis sollicitudin volutpat.
+            .shadow
+        %hr.le-hr
+          %section#experiences
+            .sticky-paper-head.has-shadow
+              .content
+                %h1 experiences
+              .shadow
+            .sticky-paper-body.has-shadow
+              .content
+                .row
+                  .col-xs-12
+                    .timeline-holder.wow.bounceInUp{:style => "visibility: hidden; animation-name: none;"}
+                      .timeline-head.event-head
+                        .icon
+                          %i.fa.fa-suitcase
+                      .timeline-body
+                        .event-item.timeline-item
+                          .event-title.left
+                            %h1 front-end developer
+                            %h4
+                              Envato
+                              %small 2012-2014
+                          .event-content.timeline-content.right
+                            %p
+                              Lorem ipsum dolor sit amet,
+                              = succeed "." do
+                                %strong consectetur adipiscing elit
+                              Vivamus laoreet dolor metus, eu ullamcorper turpis ornare tincidunt.
+                              Vivamus tristique rhoncus enim. Curabitur varius est quis sollicitudin volutpat.
+                        .event-item.timeline-item
+                          .event-content.timeline-content.left
+                            %p
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Vivamus laoreet dolor metus, eu ullamcorper turpis ornare tincidunt.
+                              Vivamus tristique rhoncus enim. Curabitur varius est quis sollicitudin volutpat.
+                          .event-title.right
+                            %h1 webdeveloper
+                            %h4
+                              john doe copmany
+                              %small 2010-2012
+                        .event-item.timeline-item
+                          .event-title.left
+                            %h1 web designer
+                            %h4
+                              example company
+                              %small 2005-2008
+                          .event-content.timeline-content.right
+                            %p
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipiscing elit. Vivamus laoreet dolor metus, eu ullamcorper turpis
+                              ornare tincidunt. Vivamus tristique rhoncus enim. Curabitur varius est
+                              quis sollicitudin volutpat.
+              .shadow
+          %hr.le-hr
+            %section#skills
+              .sticky-paper-head.has-shadow
+                .content
+                  %h1 skills
+                .shadow
+              .sticky-paper-body.has-shadow
+                .content
+                  .row
+                    .col-xs-12
+                      .timeline-holder.wow.bounceInUp{:style => "visibility: hidden; animation-name: none;"}
+                        #skills-head.timeline-head
+                          .icon
+                            %i.fa.fa-tasks
+                        .timeline-body
+                          .skill-holder.timeline-item
+                            .skill-item.left
+                              .skill.circliful{"data-fill" => "#272425", "data-info" => "Lorem ipsum dolor sit amet", "data-percent" => "0", "data-text" => "Linux", :style => "width: 150px;"}
+                                %span.circle-text{:style => "line-height: 150px; font-size: 20px;"} Linux
+                                %span.circle-info-half{:style => "line-height: 187.5px;"} Lorem ipsum dolor sit amet
+                                %canvas{:height => "155", :width => "150"}
+                            .event-content.timeline-content.right
+                              %p
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vivamus laoreet dolor metus, eu ullamcorper turpis ornare tincidunt.
+                                Vivamus tristique
+                                = succeed "." do
+                                  %strong rhoncus enim
+                                Curabitur varius est quis sollicitudin volutpat.
+                          .skill-holder.timeline-item
+                            .event-content.timeline-content.left
+                              %p
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vivamus laoreet dolor metus, eu ullamcorper turpis ornare tincidunt.
+                                %strong Vivamus
+                                tristique rhoncus enim. Curabitur varius est quis sollicitudin volutpat.
+                            .skill-item.right
+                              .skill.circliful{"data-fill" => "#272425", "data-info" => "HTML", "data-percent" => "85", "data-text" => "85%", :style => "width: 150px;"}
+                                %span.circle-text{:style => "line-height: 150px; font-size: 20px;"} 85%
+                                %span.circle-info-half{:style => "line-height: 187.5px;"} HTML
+                                %canvas{:height => "155", :width => "150"}
+                          .skill-holder.timeline-item
+                            .skill-item.left
+                              .skill.circliful{"data-fill" => "#272425", "data-info" => "CSS", "data-percent" => "75", "data-text" => "75%", :style => "width: 150px;"}
+                                %span.circle-text{:style => "line-height: 150px; font-size: 20px;"} 75%
+                                %span.circle-info-half{:style => "line-height: 187.5px;"} CSS
+                                %canvas{:height => "155", :width => "150"}
+                            .event-content.timeline-content.right
+                              %p
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vivamus laoreet
+                                = succeed "," do
+                                  %strong dolor metus
+                                eu ullamcorper turpis ornare tincidunt.
+                                Vivamus tristique rhoncus enim. Curabitur varius est quis sollicitudin volutpat.
+                          .skill-holder.timeline-item
+                            .event-content.timeline-content.left
+                              %p
+                                Lorem
+                                %strong ipsum dolor
+                                sit amet, consectetur adipiscing elit.
+                                Vivamus laoreet dolor metus, eu ullamcorper turpis ornare tincidunt.
+                                Vivamus tristique rhoncus enim. Curabitur varius est quis sollicitudin volutpat.
+                            .skill-item.right
+                              .skill.circliful{"data-fill" => "#272425", "data-info" => "jQuery", "data-percent" => "65", "data-text" => "65%", :style => "width: 150px;"}
+                                %span.circle-text{:style => "line-height: 150px; font-size: 20px;"} 65%
+                                %span.circle-info-half{:style => "line-height: 187.5px;"} jQuery
+                                %canvas{:height => "155", :width => "150"}
+                .shadow
+            %hr.le-hr
+              %section#portfolio
+                .sticky-paper-head.has-shadow
+                  .content
+                    %h1 portfolio
+                  .shadow
+                .sticky-paper-body.has-shadow
+                  .content
+                    .row
+                      .col-xs-12
+                        .portfolio-holder
+                          #filters.group-selectors
+                            %a.active{"data-filter" => "*", :href => "#all"}
+                              all
+                              %span
+                            %a{"data-filter" => ".advertisement", :href => "#advertisement"}
+                              advertisement
+                              %span
+                            %a{"data-filter" => ".illustration", :href => "#illustration"}
+                              illustration
+                              %span
+                            %a{"data-filter" => ".web", :href => "#web"}
+                              web
+                              %span
+                            %a{"data-filter" => ".branding", :href => "#branding"}
+                              branding
+                              %span
+                          #portfolio-grid.row.isotope{:style => "position: relative; overflow: hidden; height: 935px;"}
+                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.illustration.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"}
+                              %a{"data-rel" => "prettyphoto"}
+                                = image_tag 'work01.jpg'
+                              .holder
+                                .paper.has-shadow.title
+                                  .content
+                                    Cartoon Man
+                                  .shadow
+                                .paper.has-shadow.category
+                                  .content
+                                    illustration
+                                  .shadow
+                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.advertisement.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(388px, 0px);"}
+                              %a{"data-rel" => "prettyphoto"}
+                                = image_tag 'work02.jpg'
+                              .holder
+                                .paper.has-shadow.title
+                                  .content
+                                    The Project
+                                  .shadow
+                                .paper.has-shadow.category
+                                  .content
+                                    advertisement
+                                  .shadow
+                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.branding.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(776px, 0px);"}
+                              %a{"data-rel" => "prettyphoto"}
+                                = image_tag 'work04.jpg'
+                              .holder
+                                .paper.has-shadow.title
+                                  .content
+                                    Punch your boss
+                                  .shadow
+                                .paper.has-shadow.category
+                                  .content
+                                    branding
+                                  .shadow
+                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.advertisement.web.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(776px, 459px);"}
+                              %a{"data-rel" => "prettyphoto"}
+                                = image_tag 'work03.jpg'
+                              .holder
+                                .paper.has-shadow.title
+                                  .content
+                                    motion picture
+                                  .shadow
+                                .paper.has-shadow.category
+                                  .content
+                                    advertisement
+                                  .shadow
+                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.branding.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(0px, 476px);"}
+                              %a{"data-rel" => "prettyphoto"}
+                                = image_tag 'work05.jpg'
+                              .holder
+                                .paper.has-shadow.title
+                                  .content
+                                    logo design
+                                  .shadow
+                                .paper.has-shadow.category
+                                  .content
+                                    branding
+                                  .shadow
+                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.branding.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(388px, 476px);"}
+                              %a{"data-rel" => "prettyphoto"}
+                                = image_tag 'work06.jpg'
+                              .holder
+                                .paper.has-shadow.title
+                                  .content
+                                    animating job #3
+                                  .shadow
+                                .paper.has-shadow.category
+                                  .content
+                                    branding
+                                  .shadow
+                  .shadow
+              %hr.le-hr
+                %section#blog
+                  .sticky-paper-head.has-shadow
+                    .content
+                      %h1 Blog
+                    .shadow
+                  .sticky-paper-body.has-shadow
+                    .content
+                      .row
+                        .col-xs-12
+                          .blog-list-holder.row
+                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
+                              .thumb.has-shadow
+                                .date
+                                  08 Apr 2014
+                                = image_tag 'img01.jpg'
+                                .shadow
+                              .info-area
+                                .title
+                                  Lorem ipsum dolor sit amet
+                                .excerpt
+                                  %p
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
+                                    consectetur libero rhoncus.
+                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
+                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
+                              .thumb.has-shadow
+                                .date
+                                  15 Sep 2014
+                                = image_tag 'img02.jpg'
+                                .shadow
+                              .info-area
+                                .title
+                                  Lorem ipsum dolor sit amet
+                                .excerpt
+                                  %p
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
+                                    consectetur libero rhoncus.
+                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
+                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
+                              .thumb.has-shadow
+                                .date
+                                  01 July 2014
+                                = image_tag 'img03.jpg'
+                                .shadow
+                              .info-area
+                                .title
+                                  Lorem ipsum dolor sit amet
+                                .excerpt
+                                  %p
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
+                                    consectetur libero rhoncus.
+                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
+                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
+                              .thumb.has-shadow
+                                .date
+                                  05 June 2014
+                                = image_tag 'img04.jpg'
+                                .shadow
+                              .info-area
+                                .title
+                                  Lorem ipsum dolor sit amet
+                                .excerpt
+                                  %p
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
+                                    consectetur libero rhoncus.
+                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
+                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
+                              .thumb.has-shadow
+                                .date
+                                  25 Nov 2014
+                                = image_tag 'img05.jpg'
+                                .shadow
+                              .info-area
+                                .title
+                                  Lorem ipsum dolor sit amet
+                                .excerpt
+                                  %p
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
+                                    consectetur libero rhoncus.
+                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
+                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
+                              .thumb.has-shadow
+                                .date
+                                  10 Aug 2014
+                                = image_tag 'img06.jpg'
+                                .shadow
+                              .info-area
+                                .title
+                                  Lorem ipsum dolor sit amet
+                                .excerpt
+                                  %p
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
+                                    consectetur libero rhoncus.
+                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
+                    .shadow
+                %hr.le-hr
+                  %section#contact
+                    .sticky-paper-head.has-shadow
+                      .content
+                        %h1 contact
+                      .shadow
+                    .sticky-paper-body.has-shadow
+                      .content
+                        .row.row-contact
+                          .col-xs-12.col-md-8
+                            .contact-form-holder
+                              .message-box
+                              %form#contact-form.contact-form{:method => "post", :novalidate => "novalidate"}
+                                .col-xs-12.col-sm-6.no-margin
+                                  .control-group
+                                    .controls
+                                      %input#cname.le-input.required.col-xs-12.placeholder{"data-placeholder" => "Your Name*", :name => "name", :size => "25", :value => "Your Name*"}
+                                .col-xs-12.col-sm-6.no-margin
+                                  .control-group
+                                    .controls
+                                      %input#cemail.le-input.required.email.col-xs-12.placeholder{"data-placeholder" => "Your Email*", :name => "email", :value => "Your Email*"}
+                                .col-xs-12.no-margin
+                                  .control-group
+                                    .controls
+                                      %input#subject.le-input.col-xs-12.placeholder{"data-placeholder" => "Subject", :name => "subject", :size => "25", :value => "Subject"}
+                                .col-xs-12.no-margin
+                                  .control-group
+                                    .controls
+                                      %textarea#ccomment.le-input.col-xs-12.no-margin.placeholder{:cols => "5", "data-placeholder" => "Message", :name => "message", :rows => "9"} Message
+                                .col-xs-12.no-margin
+                                  .button-holder
+                                    %input.submit.le-btn.big{:type => "submit", :value => "send"}
+                                  #loading.pull-right
+                                    = image_tag 'loader.gif'
+                          .col-xs-12.col-md-4
+                            .contact-info
+                              %ul
+                                %li
+                                  %label address:
+                                  Ataturk Blvd, 6209 St, Suite 877
+                                  %br
+                                    Istanbul,Turkey
+                                %li
+                                  %label email:
+                                  %a{:href => "#"} info@example.com
+                                %li
+                                  %label phone:
+                                  %a{:href => "#"} +90 555 111 2233
+                                %li
+                                  %label fax
+                                  %a{:href => "#"} +90 123 456 7890
+                              .social-icons
+                                %ul
+                                  %li
+                                    %a.fa.fa-facebook{:href => "#"}
+                                  %li
+                                    %a.fa.fa-twitter{:href => "#"}
+                                  %li
+                                    %a.fa.fa-google-plus{:href => "#"}
+                                  %li
+                                    %a.fa.fa-youtube{:href => "#"}
+                                  %li
+                                    %a.fa.fa-linkedin{:href => "#"}
+                      .shadow
+                  %section#footer
+                    .sticky-paper-head.has-shadow
+                      .content
+                        .copyright
+                          created with
+                          %i.fa.fa-glass
+                          by
+                          %a.bold{:href => "http://themeforest.net/user/leamino?ref=leAmino"} LeAmino
+                      .shadow
+%a.goto-top{:href => "#gotop", :style => "opacity: 0;"}
+= javascript_include_tag 'application', 'data-turbolinks-track' => true

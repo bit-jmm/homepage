@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
 gem 'haml-rails', '~> 0.9'
 
+# font-awesome
+gem 'font-awesome-sass'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'rails_12factor'
