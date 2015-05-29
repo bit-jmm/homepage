@@ -6627,7 +6627,7 @@ header {
   z-index: 5;
 }
 .paper:before {
-  background-image: image-url("noise.png");
+  background-image: url("/assets/noise.png");
   background-color: #dedad1;
   position: absolute;
   content: "";
@@ -7085,7 +7085,7 @@ header .head-image:before:not([dummy]) {
 }
 header .head-image:after {
   content: "";
-  background-image: image-url("shadow.png");
+  background-image: url("/assets/shadow.png");
   background-repeat: repeat-x;
   background-position: bottom;
   position: absolute;
@@ -8246,7 +8246,7 @@ header .avatar:after {
   bottom: 0;
   margin: auto;
   top: 0;
-  background-image: image-url("page-loader.gif");
+  background-image: url("/assets/page-loader.gif");
   /* path to your loading animation */
   background-repeat: no-repeat;
   background-position: center;
