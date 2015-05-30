@@ -208,7 +208,7 @@ $('body').scrollspy('refresh'); // Refresh the scrollspy.
     }, 2000, 'easeInOutExpo');
   }
 
-  $('.nav-menu a').bind('click', function(event) {
+  $('.nav-menu a[address]').bind('click', function(event) {
     event.preventDefault();
     var clickedMenu = $(this);
     $('.nav-menu .active').toggleClass('active');

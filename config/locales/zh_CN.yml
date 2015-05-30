@@ -2,12 +2,18 @@ zh_CN:
   en_language: 英文版
   cn_language: 中文版
   author: 蒋明明
+  address: 地址
+  email: 邮箱
+  fax: 传真
+  phone: 电话
+  myaddress: 中国 北京市海淀区中关村南大街5号
   title: 蒋明明的个人主页
   navbar_title:
-    introduction: 自我介绍
+    home: 主页
+    profile: 个人资料
     education: 教育背景
     skills: 专业技能
-    experience: 工作经历
+    experiences: 经历
     awards: 所获奖励
     interests: 兴趣爱好
     contact: 联系方式

@@ -1,6 +1,3 @@
-#preloader{:style => "display: none;"}
-  #status{:style => "display: none;"} &nbsp;
-  %noscript JavaScript is off. Please enable to view full site.
 .wrapper
   .container
     %header#home
@@ -12,54 +9,52 @@
           .social-icons
             %ul
               %li
-                %a.fa.fa-facebook{:href => "#"}
+                %a.fa.fa-facebook{:target => '_blank', :href => "https://www.facebook.com/ming.jqing.3"}
               %li
-                %a.fa.fa-twitter{:href => "#"}
+                %a.fa.fa-twitter{:target => '_blank', :href => "https://twitter.com/mmjiang"}
               %li
-                %a.fa.fa-google-plus{:href => "#"}
+                %a.fa.fa-google-plus{:target => '_blank', :href => "https://plus.google.com/u/0/102532645207777850705"}
               %li
-                %a.fa.fa-youtube{:href => "#"}
+                %a.fa.fa-github{:target => '_blank', :href => "https://github.com/bit-jmm"}
               %li
-                %a.fa.fa-github{:href => "#"}
+                %a.fa.fa-linkedin{:target => '_blank', :href => "https://cn.linkedin.com/in/mmjiang"}
         .shadow
       .col-xs-12.nav-menu.top-menu-holder
         %nav.hidden-xs.visible-lg
           %ul.nav
             %li.active
-              %a{:address => "true", :href => "#home"} home
+              %a{:address => "true", :href => "#home"}= t 'navbar_title.home'
             %li
-              %a{:address => "true", :href => "#profile"} profile
+              %a{:address => "true", :href => "#profile"}= t 'navbar_title.profile'
             %li
-              %a{:address => "true", :href => "#education"} education
+              %a{:address => "true", :href => "#education"}= t 'navbar_title.education'
             %li
-              %a{:address => "true", :href => "#experiences"} experiences
+              %a{:address => "true", :href => "#experiences"}= t 'navbar_title.experiences'
             %li
-              %a{:address => "true", :href => "#skills"} skills
+              %a{:address => "true", :href => "#skills"}= t 'navbar_title.skills'
             %li
-              %a{:address => "true", :href => "#portfolio"} portfolio
-            %li
-              %a{:address => "true", :href => "#blog"} blog
-            %li
-              %a{:address => "true", :href => "#contact"} contact
+              %a{:address => "true", :href => "#contact"}= t 'navbar_title.contact'
+            - if flash['locale'] == 'en'
+              %li.active
+                %a{:href => "?locale=en"}=t('en_language')
+              %li
+                %a{:href => "?locale=zh_CN"}=t('cn_language')
+            - else
+              %li
+                %a{:href => "?locale=en"}=t('en_language')
+              %li.active
+                %a{:href => "?locale=zh_CN"}=t('cn_language')
         %select.top-drop-menu.nav.visible-md.visible-sm.visible-xs.hidden-lg
-          %option{:selected => "selected", :value => "#home"}
-            Home
-          %option{:value => "#profile"}
-            Profile
-          %option{:value => "#education"}
-            Education
-          %option{:value => "#experiences"}
-            Experiences
-          %option{:value => "#skills"}
-            Skills
-          %option{:value => "#portfolio"}
-            Portfolio
-          %option{:value => "#contact"}
-            Contact
+          %option{:selected => "selected", :value => "#home"}= t 'navbar_title.home'
+          %option{:value => "#profile"}= t 'navbar_title.profile'
+          %option{:value => "#education"}= t 'navbar_title.education'
+          %option{:value => "#experiences"}= t 'navbar_title.experiences'
+          %option{:value => "#skills"}= t 'navbar_title.skills'
+          %option{:value => "#contact"}= t 'navbar_title.contact'
     %section#info.big-name
       .sticky-paper-head.has-shadow
         .content
-          %h1 Mingming Jiang
+          %h1= t 'author'
           .short-tag
             Software Engineer
         .shadow
@@ -107,21 +102,21 @@
                 .social-icons.small
                   %ul
                     %li
-                      %a.fa.fa-facebook{:href => "#"}
+                      %a.fa.fa-facebook{:target => '_blank', :href => "https://www.facebook.com/ming.jqing.3"}
                     %li
-                      %a.fa.fa-twitter{:href => "#"}
+                      %a.fa.fa-twitter{:target => '_blank', :href => "https://twitter.com/mmjiang"}
                     %li
-                      %a.fa.fa-google-plus{:href => "#"}
+                      %a.fa.fa-google-plus{:target => '_blank', :href => "https://plus.google.com/u/0/102532645207777850705"}
                     %li
-                      %a.fa.fa-youtube{:href => "#"}
+                      %a.fa.fa-github{:target => '_blank', :href => "https://github.com/bit-jmm"}
                     %li
-                      %a.fa.fa-github{:href => "#"}
+                      %a.fa.fa-linkedin{:target => '_blank', :href => "https://cn.linkedin.com/in/mmjiang"}
         .shadow
     %hr.le-hr
       %section#profile
         .sticky-paper-head.has-shadow
           .content
-            %h1 profile
+            %h1= t 'navbar_title.profile'
           .shadow
         .sticky-paper-body.has-shadow
           .content
@@ -233,7 +228,7 @@
         %section#education
           .sticky-paper-head.has-shadow
             .content
-              %h1 education
+              %h1= t 'navbar_title.education'
             .shadow
           .sticky-paper-body.has-shadow
             .content
@@ -279,7 +274,7 @@
           %section#experiences
             .sticky-paper-head.has-shadow
               .content
-                %h1 experiences
+                %h1= t 'navbar_title.experiences'
               .shadow
             .sticky-paper-body.has-shadow
               .content
@@ -331,7 +326,7 @@
             %section#skills
               .sticky-paper-head.has-shadow
                 .content
-                  %h1 skills
+                  %h1= t 'navbar_title.skills'
                 .shadow
               .sticky-paper-body.has-shadow
                 .content
@@ -397,280 +392,74 @@
                                 %canvas{:height => "155", :width => "150"}
                 .shadow
             %hr.le-hr
-              %section#portfolio
+              %section#contact
                 .sticky-paper-head.has-shadow
                   .content
-                    %h1 portfolio
+                    %h1= t 'navbar_title.contact'
                   .shadow
                 .sticky-paper-body.has-shadow
                   .content
-                    .row
-                      .col-xs-12
-                        .portfolio-holder
-                          #filters.group-selectors
-                            %a.active{"data-filter" => "*", :href => "#all"}
-                              all
-                              %span
-                            %a{"data-filter" => ".advertisement", :href => "#advertisement"}
-                              advertisement
-                              %span
-                            %a{"data-filter" => ".illustration", :href => "#illustration"}
-                              illustration
-                              %span
-                            %a{"data-filter" => ".web", :href => "#web"}
-                              web
-                              %span
-                            %a{"data-filter" => ".branding", :href => "#branding"}
-                              branding
-                              %span
-                          #portfolio-grid.row.isotope{:style => "position: relative; overflow: hidden; height: 935px;"}
-                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.illustration.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"}
-                              %a{"data-rel" => "prettyphoto"}
-                                = image_tag 'work01.jpg'
-                              .holder
-                                .paper.has-shadow.title
-                                  .content
-                                    Cartoon Man
-                                  .shadow
-                                .paper.has-shadow.category
-                                  .content
-                                    illustration
-                                  .shadow
-                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.advertisement.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(388px, 0px);"}
-                              %a{"data-rel" => "prettyphoto"}
-                                = image_tag 'work02.jpg'
-                              .holder
-                                .paper.has-shadow.title
-                                  .content
-                                    The Project
-                                  .shadow
-                                .paper.has-shadow.category
-                                  .content
-                                    advertisement
-                                  .shadow
-                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.branding.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(776px, 0px);"}
-                              %a{"data-rel" => "prettyphoto"}
-                                = image_tag 'work04.jpg'
-                              .holder
-                                .paper.has-shadow.title
-                                  .content
-                                    Punch your boss
-                                  .shadow
-                                .paper.has-shadow.category
-                                  .content
-                                    branding
-                                  .shadow
-                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.advertisement.web.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(776px, 459px);"}
-                              %a{"data-rel" => "prettyphoto"}
-                                = image_tag 'work03.jpg'
-                              .holder
-                                .paper.has-shadow.title
-                                  .content
-                                    motion picture
-                                  .shadow
-                                .paper.has-shadow.category
-                                  .content
-                                    advertisement
-                                  .shadow
-                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.branding.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(0px, 476px);"}
-                              %a{"data-rel" => "prettyphoto"}
-                                = image_tag 'work05.jpg'
-                              .holder
-                                .paper.has-shadow.title
-                                  .content
-                                    logo design
-                                  .shadow
-                                .paper.has-shadow.category
-                                  .content
-                                    branding
-                                  .shadow
-                            %figure.col-xs-12.col-sm-6.col-md-4.portfolio-item.branding.isotope-item{:style => "position: absolute; left: 0px; top: 0px; transform: translate(388px, 476px);"}
-                              %a{"data-rel" => "prettyphoto"}
-                                = image_tag 'work06.jpg'
-                              .holder
-                                .paper.has-shadow.title
-                                  .content
-                                    animating job #3
-                                  .shadow
-                                .paper.has-shadow.category
-                                  .content
-                                    branding
-                                  .shadow
+                    .row.row-contact
+                      .col-xs-12.col-md-8
+                        .contact-form-holder
+                          .message-box
+                          %form#contact-form.contact-form{:method => "post", :novalidate => "novalidate"}
+                            .col-xs-12.col-sm-6.no-margin
+                              .control-group
+                                .controls
+                                  %input#cname.le-input.required.col-xs-12.placeholder{"data-placeholder" => "Your Name*", :name => "name", :size => "25", :value => "Your Name*"}
+                            .col-xs-12.col-sm-6.no-margin
+                              .control-group
+                                .controls
+                                  %input#cemail.le-input.required.email.col-xs-12.placeholder{"data-placeholder" => "Your Email*", :name => "email", :value => "Your Email*"}
+                            .col-xs-12.no-margin
+                              .control-group
+                                .controls
+                                  %input#subject.le-input.col-xs-12.placeholder{"data-placeholder" => "Subject", :name => "subject", :size => "25", :value => "Subject"}
+                            .col-xs-12.no-margin
+                              .control-group
+                                .controls
+                                  %textarea#ccomment.le-input.col-xs-12.no-margin.placeholder{:cols => "5", "data-placeholder" => "Message", :name => "message", :rows => "9"} Message
+                            .col-xs-12.no-margin
+                              .button-holder
+                                %input.submit.le-btn.big{:type => "submit", :value => "send"}
+                              #loading.pull-right
+                                = image_tag 'loader.gif'
+                      .col-xs-12.col-md-4
+                        .contact-info
+                          %ul
+                            %li
+                              %label= t('address') + ':'
+                              %br
+                                = t 'myaddress'
+                            %li
+                              %label= t('email') + ':'
+                              %a{:href => "#"} jqingming@gmail.com
+                            %li
+                              %label= t('phone') + ':'
+                              %a{:href => "#"} +86 18601302770
+                            %li
+                              %label= t('fax') + ':'
+                              %a{:href => "#"} None
+                          .social-icons
+                            %ul
+                              %li
+                                %a.fa.fa-facebook{:target => '_blank', :href => "https://www.facebook.com/ming.jqing.3"}
+                              %li
+                                %a.fa.fa-twitter{:target => '_blank', :href => "https://twitter.com/mmjiang"}
+                              %li
+                                %a.fa.fa-google-plus{:target => '_blank', :href => "https://plus.google.com/u/0/102532645207777850705"}
+                              %li
+                                %a.fa.fa-github{:target => '_blank', :href => "https://github.com/bit-jmm"}
+                              %li
+                                %a.fa.fa-linkedin{:target => '_blank', :href => "https://cn.linkedin.com/in/mmjiang"}
                   .shadow
-              %hr.le-hr
-                %section#blog
-                  .sticky-paper-head.has-shadow
-                    .content
-                      %h1 Blog
-                    .shadow
-                  .sticky-paper-body.has-shadow
-                    .content
-                      .row
-                        .col-xs-12
-                          .blog-list-holder.row
-                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
-                              .thumb.has-shadow
-                                .date
-                                  08 Apr 2014
-                                = image_tag 'img01.jpg'
-                                .shadow
-                              .info-area
-                                .title
-                                  Lorem ipsum dolor sit amet
-                                .excerpt
-                                  %p
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
-                                    consectetur libero rhoncus.
-                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
-                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
-                              .thumb.has-shadow
-                                .date
-                                  15 Sep 2014
-                                = image_tag 'img02.jpg'
-                                .shadow
-                              .info-area
-                                .title
-                                  Lorem ipsum dolor sit amet
-                                .excerpt
-                                  %p
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
-                                    consectetur libero rhoncus.
-                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
-                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
-                              .thumb.has-shadow
-                                .date
-                                  01 July 2014
-                                = image_tag 'img03.jpg'
-                                .shadow
-                              .info-area
-                                .title
-                                  Lorem ipsum dolor sit amet
-                                .excerpt
-                                  %p
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
-                                    consectetur libero rhoncus.
-                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
-                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
-                              .thumb.has-shadow
-                                .date
-                                  05 June 2014
-                                = image_tag 'img04.jpg'
-                                .shadow
-                              .info-area
-                                .title
-                                  Lorem ipsum dolor sit amet
-                                .excerpt
-                                  %p
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
-                                    consectetur libero rhoncus.
-                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
-                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
-                              .thumb.has-shadow
-                                .date
-                                  25 Nov 2014
-                                = image_tag 'img05.jpg'
-                                .shadow
-                              .info-area
-                                .title
-                                  Lorem ipsum dolor sit amet
-                                .excerpt
-                                  %p
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
-                                    consectetur libero rhoncus.
-                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
-                            .blog-item.item.col-xs-12.col-md-6.col-lg-4
-                              .thumb.has-shadow
-                                .date
-                                  10 Aug 2014
-                                = image_tag 'img06.jpg'
-                                .shadow
-                              .info-area
-                                .title
-                                  Lorem ipsum dolor sit amet
-                                .excerpt
-                                  %p
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Curabitur consequat mi in augue adipiscing, ut
-                                    consectetur libero rhoncus.
-                                %a.le-btn{:href => "http://amindiary.com/demo/papyrus/single-post.html"} readmore
-                    .shadow
-                %hr.le-hr
-                  %section#contact
-                    .sticky-paper-head.has-shadow
-                      .content
-                        %h1 contact
-                      .shadow
-                    .sticky-paper-body.has-shadow
-                      .content
-                        .row.row-contact
-                          .col-xs-12.col-md-8
-                            .contact-form-holder
-                              .message-box
-                              %form#contact-form.contact-form{:method => "post", :novalidate => "novalidate"}
-                                .col-xs-12.col-sm-6.no-margin
-                                  .control-group
-                                    .controls
-                                      %input#cname.le-input.required.col-xs-12.placeholder{"data-placeholder" => "Your Name*", :name => "name", :size => "25", :value => "Your Name*"}
-                                .col-xs-12.col-sm-6.no-margin
-                                  .control-group
-                                    .controls
-                                      %input#cemail.le-input.required.email.col-xs-12.placeholder{"data-placeholder" => "Your Email*", :name => "email", :value => "Your Email*"}
-                                .col-xs-12.no-margin
-                                  .control-group
-                                    .controls
-                                      %input#subject.le-input.col-xs-12.placeholder{"data-placeholder" => "Subject", :name => "subject", :size => "25", :value => "Subject"}
-                                .col-xs-12.no-margin
-                                  .control-group
-                                    .controls
-                                      %textarea#ccomment.le-input.col-xs-12.no-margin.placeholder{:cols => "5", "data-placeholder" => "Message", :name => "message", :rows => "9"} Message
-                                .col-xs-12.no-margin
-                                  .button-holder
-                                    %input.submit.le-btn.big{:type => "submit", :value => "send"}
-                                  #loading.pull-right
-                                    = image_tag 'loader.gif'
-                          .col-xs-12.col-md-4
-                            .contact-info
-                              %ul
-                                %li
-                                  %label address:
-                                  %br
-                                    5 South Zhongguancun Street, Haidian District
-                                    Beijing, China
-                                %li
-                                  %label email:
-                                  %a{:href => "#"} jqingming@gmail.com
-                                %li
-                                  %label phone:
-                                  %a{:href => "#"} +86 18601302770
-                                %li
-                                  %label fax:
-                                  %a{:href => "#"} None
-                              .social-icons
-                                %ul
-                                  %li
-                                    %a.fa.fa-facebook{:href => "#"}
-                                  %li
-                                    %a.fa.fa-twitter{:href => "#"}
-                                  %li
-                                    %a.fa.fa-google-plus{:href => "#"}
-                                  %li
-                                    %a.fa.fa-youtube{:href => "#"}
-                                  %li
-                                    %a.fa.fa-linkedin{:href => "#"}
-                      .shadow
                   %section#footer
                     .sticky-paper-head.has-shadow
                       .content
                         .copyright
-                          created with
-                          %i.fa.fa-glass
-                          by
-                          %a.bold{:href => "http://themeforest.net/user/leamino?ref=leAmino"} LeAmino
+                          created by
+                          %a.bold{:href => "#home"}=t('author')
                       .shadow
 %a.goto-top{:href => "#gotop", :style => "opacity: 0;"}
 = javascript_include_tag 'application', 'data-turbolinks-track' => true

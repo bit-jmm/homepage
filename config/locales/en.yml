@@ -23,15 +23,20 @@ en:
   en_language: English
   cn_language: Chinese
   language: English
-  author: "Jiang Mingming"
-  title: "Jiang Mingming's homepage"
+  author: "Mingming Jiang"
+  address: address
+  email: email
+  fax: fax
+  phone: phone
+  myaddress: 5 South Zhongguancun Street, Haidian District, Beijing, China
+  title: "Mingming Jiang's homepage"
   navbar_title:
-    introduction: Introduction
+    home: Home
+    profile: Profile
     education: Education
-    skills: Professional Skills
-    experience: Experience
+    experiences: Experiences
+    skills: Skills
     awards: Awards
-    interests: Interests & Hobbies
     contact: Contact
   date:
     abbr_day_names:

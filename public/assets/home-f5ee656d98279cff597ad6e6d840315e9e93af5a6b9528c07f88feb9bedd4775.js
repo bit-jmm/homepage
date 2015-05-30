@@ -1,1 +1,0 @@
-(function(){$(function(){return $("#navbar ul li a").on("click",function(){return $(this).parent().siblings().removeClass("active"),$(this).parent().addClass("active")})})}).call(this);
